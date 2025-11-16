@@ -18,10 +18,11 @@ def i_navigate_to_signup(signup_page: SignupPage):
 @when("I fill step1 with unique credentials")
 def i_fill_step1_with_unique_credentials(signup_page: SignupPage, request):
     # store email in pytest request.config or request.node for later assertion
-    generated_email = signup_page.fill_step1_with_unique_credentials()
+    #generated_email = 
+    signup_page.fill_step1_with_unique_credentials()
     # attach to the request.node so Then step can access it
-    request.node.generated_email = generated_email
-
+    #request.node.generated_email = generated_email
+#last test
 @then("the email field should contain the generated email")
 def email_field_contains_generated_email(signup_page: SignupPage, request):
     generated_email = getattr(request.node, "generated_email", None)
